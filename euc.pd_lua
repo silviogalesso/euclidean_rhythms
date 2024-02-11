@@ -88,8 +88,8 @@ function euc:euc_pad(beats, steps, pad, accents)
     do
         if (sequence[i]==1)
         then
+            -- pd.post(string.format("%g %g %g", accents_counter, accents[accents_counter], sequence[i]))
             sequence[i] = sequence[i]+accents[accents_counter]
-            pd.post(string.format("%g %g %g", accents_counter, accents[accents_counter], sequence[i]))
             accents_counter = accents_counter+1
         end
     end
@@ -100,6 +100,7 @@ function euc:euc_pad(beats, steps, pad, accents)
     end
     return sequence
 end
+
 
 function euc:compute()
     -- send number of steps to outlet

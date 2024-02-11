@@ -1,0 +1,47 @@
+#N canvas 0 49 1920 1006 12;
+#X obj 304 229 f;
+#X obj 344 229 f;
+#X obj 637 237 f;
+#X obj 577 140 savestate;
+#X text 651 140 right outlet gets bang when parent patch is saved.
+In response we send 'savestate' one or more lists that will be stored
+as part of the parent patch, f 35;
+#X text 708 299 Left outlet returns the list or lists to the abstraction
+which can use them to restore its state when it is reloaded., f 38
+;
+#X text 678 232 In response \, we build and send a list of parameters
+we want to save, f 34;
+#X obj 120 90 cnv 15 100 60 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X floatatom 322 131 3 0 90 0 - - -, f 3;
+#X floatatom 352 131 3 0 32 0 - - -, f 3;
+#X floatatom 382 131 3 0 32 0 - - -, f 3;
+#X obj 382 227 f;
+#X obj 260 80 inlet;
+#X obj 640 280 pack f f f;
+#X obj 577 311 unpack f f f;
+#X obj 340 308 makenote;
+#X obj 340 330 noteout 1;
+#X text 320 106 note vel dur;
+#X connect 0 0 15 0;
+#X connect 1 0 15 1;
+#X connect 2 0 13 0;
+#X connect 3 0 14 0;
+#X connect 3 1 2 0;
+#X connect 8 0 0 1;
+#X connect 8 0 2 1;
+#X connect 9 0 1 1;
+#X connect 9 0 13 1;
+#X connect 10 0 11 1;
+#X connect 10 0 13 2;
+#X connect 11 0 15 2;
+#X connect 12 0 0 0;
+#X connect 12 0 1 0;
+#X connect 12 0 11 0;
+#X connect 13 0 3 0;
+#X connect 14 0 8 0;
+#X connect 14 1 9 0;
+#X connect 14 2 10 0;
+#X connect 15 0 16 0;
+#X connect 15 1 16 1;
+#X coords 0 -1 1 1 101 51 2 314 103;
